@@ -62,6 +62,7 @@ document.getElementById('fileInput').addEventListener('change', function(event) 
                     }
                 }
 
+
                 const tr = document.createElement('tr');
                 const employeeIdCell = document.createElement('td');
                 const dateCell = document.createElement('td');
@@ -132,6 +133,17 @@ document.getElementById('searchButton').addEventListener('click', function() {
 document.getElementById('clearButton').addEventListener('click', function() {
     const employeeTableBody = document.getElementById('employeeTable').getElementsByTagName('tbody')[0];
     employeeTableBody.innerHTML = '';
+});
+
+document.getElementById('toggleArrow').addEventListener('click', function() {
+    var container = document.getElementById('floatingContainer');
+    if (container.classList.contains('expanded')) {
+        container.classList.remove('expanded');
+        this.classList.remove('expanded');
+    } else {
+        container.classList.add('expanded');
+        this.classList.add('expanded');
+    }
 });
 
 // Function to convert Excel date to JavaScript date

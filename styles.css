@@ -35,7 +35,28 @@ body {
     border-radius: 8px;
     padding: 20px;
     z-index: 1000;
+    transition: width 0.3s, height 0.3s;
 }
+
+.floating-container.expanded {
+    width: 600px;
+    height: 80vh;
+    max-height: 500px;
+}
+
+.arrow {
+    cursor: pointer;
+    font-size: 20px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    transition: transform 0.3s;
+}
+
+.arrow.expanded {
+    transform: rotate(-90deg);
+}
+
 
 #clearButton {
     border: 2px solid rgb(255, 0, 0);
