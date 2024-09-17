@@ -37,6 +37,15 @@ body {
     z-index: 1000;
 }
 
+#clearButton {
+    border: 2px solid rgb(255, 0, 0);
+    background-color: rgb(255, 0, 0);
+    color: rgb(255, 255, 255);
+    /* padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer; */
+}
+
 /* Search container */
 .search-container {
     display: flex;

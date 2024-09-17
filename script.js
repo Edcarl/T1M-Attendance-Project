@@ -16,7 +16,7 @@ document.getElementById('fileInput').addEventListener('change', function(event) 
         const employeeData = {};
 
         rows.forEach((row, index) => {
-            if (index > 0) { // Skip the header row
+            if (index > 0) {
                 const employeeId = row[0];
                 const excelDate = row[1];
                 const jsDate = getJsDateFromExcel(excelDate);
@@ -127,6 +127,11 @@ document.getElementById('searchButton').addEventListener('click', function() {
             employeeTableBody.appendChild(tr);
         }
     }
+});
+
+document.getElementById('clearButton').addEventListener('click', function() {
+    const employeeTableBody = document.getElementById('employeeTable').getElementsByTagName('tbody')[0];
+    employeeTableBody.innerHTML = '';
 });
 
 // Function to convert Excel date to JavaScript date
