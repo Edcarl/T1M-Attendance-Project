@@ -49,10 +49,14 @@ document.getElementById('fileInput').addEventListener('change', function(event) 
                     status = "Didn't clock out";
                 } else {
                     totalHours = ((timeOut - timeIn) / (1000 * 60 * 60)).toFixed(2); // Calculate total hours
-                    if (totalHours < 8) {
-                        status = "Under time";
-                    } else if (totalHours > 8) {
-                        status = "Over time";
+                    if (totalHours < 7.5 && totalHours > 0 ) {
+                        let deficit = Math.round(8 - totalHours);
+                        status = "Under time: " + deficit + " hour/s";
+                    } else if (totalHours > 8.5) {
+                        let OT = Math.round(totalHours - 8);
+                        status = "Over time: " + OT + " hour/s";
+                    } else if (totalHours <= 0) {
+                        status = "Didn't clock out";
                     } else {
                         status = "Regular time";
                     }
