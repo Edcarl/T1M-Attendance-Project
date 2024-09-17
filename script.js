@@ -129,15 +129,6 @@ document.getElementById('searchButton').addEventListener('click', function() {
     }
 });
 
-document.getElementById('showAllButton').addEventListener('click', function() {
-    const table = document.getElementById('outputTable');
-    const rows = table.getElementsByTagName('tr');
-
-    for (let i = 1; i < rows.length; i++) {
-        rows[i].style.display = '';
-    }
-});
-
 // Function to convert Excel date to JavaScript date
 function getJsDateFromExcel(excelDate) {
     const excelEpoch = new Date(1899, 11, 30); // Excel epoch starts on December 30, 1899
